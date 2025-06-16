@@ -87,7 +87,7 @@ export const generateImage = async (prompt: string) => {
     console.log('OpenAI Image Generation Response:', response);
 
     // Return the URL of the generated image
-    const imageUrl = response.data[0].url || fallbackIcons[0];
+    const imageUrl = response.data?.[0]?.url || fallbackIcons[0];
     console.log('Generated Image URL:', imageUrl);
 
     return imageUrl;

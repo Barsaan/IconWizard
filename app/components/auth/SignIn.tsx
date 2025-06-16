@@ -49,6 +49,11 @@ const SignIn = () => {
 
       const authUser = session.user;
       
+      if (!authUser?.id) {
+        setError('Failed to retrieve user information. Please try again.');
+        return;
+      }
+
       // Check if user has completed onboarding
       const { data: preferences, error: preferencesError } = await supabase
         .from('onboarding_preferences')
@@ -99,6 +104,11 @@ const SignIn = () => {
 
       // Get the user from the auth response
       const { user: authUser } = signInData;
+      
+      if (!authUser?.id) {
+        setError('Failed to retrieve user information. Please try again.');
+        return;
+      }
 
       // Check if user has completed onboarding
       const { data: preferences, error: preferencesError } = await supabase

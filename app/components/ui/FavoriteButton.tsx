@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { isStyleFavorited, toggleFavorite } from '@/lib/supabase/favorites';
+import { isStyleFavorited, toggleFavorite } from '../../lib/supabase/favorites';
 
 interface FavoriteButtonProps {
   styleId: string;
